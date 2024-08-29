@@ -29,7 +29,7 @@ app.get("/blogs", (req, res) => {
     if (err) {
       return res.status(400).json({ error: err.message });
     }
-    res.json({ blogs: rows });
+    res.json(rows);
   });
 });
 
@@ -47,7 +47,7 @@ app.get("/blogs/:id", (req, res) => {
     if (!row) {
       return res.status(404).json({ error: "Blog not found" });
     }
-    res.json({ blog: row });
+    res.json(row);
   });
 });
 
